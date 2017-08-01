@@ -1,1 +1,0 @@
-/home/gdifolco/.zshrc
