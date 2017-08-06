@@ -103,4 +103,4 @@ function mail_enable {
     sudo iptables -D OUTPUT $(sudo iptables -nvL OUTPUT --line-numbers | grep dpt:465 | grep  REJECT | cut -f1 -d' ')
 }
 
-. ~/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+. ~/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh

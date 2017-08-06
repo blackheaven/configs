@@ -84,7 +84,7 @@ command! -nargs=1 Silent
             \ | execute ':redraw!'
 set complete=.,b,u,U,i,d,t,w
 set cpoptions+=$
-"set listchars=eol:$,tab:\|\ ,trail:⋅,precedes:←,extends:➜,nbsp:˽
+set listchars=eol:$,tab:\|\ ,trail:⋅,precedes:←,extends:➜,nbsp:˽
 " set listchars=eol:$,tab:\|,trail:⋅,precedes:←,extends:➜,nbsp:˽
 
 " Pas de son
