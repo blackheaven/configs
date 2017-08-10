@@ -10,12 +10,12 @@ rm -Rf   ~/.vimrc                               # delete-link
 rm -Rf   ~/.tmux.conf                           # delete-link
 rm -Rf   ~/.zshrc                               # delete-link
 rm -Rf   ~/.config/powerline                    # delete-link
-rm -Rf   ~/.config/gitconfig                    # delete-link
-rm -Rf   ~/.config/githelpers                   # delete-link
+rm -Rf   ~/.gitconfig                           # delete-link
+rm -Rf   ~/.githelpers                          # delete-link
 p=$(pwd)                                        # install-link
 ln -sfn $p/vimrc        ~/.vimrc                # install-link
 ln -sfn $p/tmux.conf    ~/.tmux.conf            # install-link
 ln -sfn $p/zshrc        ~/.zshrc                # install-link
 ln -sfn $p/powerline    ~/.config/powerline     # install-link
-ln -sfn $p/gitconfig    ~/.config/gitconfig     # install-link
-ln -sfn $p/githelpers   ~/.config/githelpers    # install-link
+ln -sfn $p/gitconfig    ~/.gitconfig            # install-link
+ln -sfn $p/githelpers   ~/.githelpers           # install-link
