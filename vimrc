@@ -374,7 +374,7 @@ vmap <C-Down> ]egv
 " pip3 install --user pygit2 
 " pip3 install --user pyuv
 " pip3 install --user psutil
-set rtp+=~/.local/lib/python3.5/site-packages/powerline/bindings/vim
+set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim
 
 " Undotree
 nnoremap <C-u> :UndotreeToggle<CR>
