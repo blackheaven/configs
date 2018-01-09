@@ -1,3 +1,4 @@
+export LC_TIME=fr_FR.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en
 export LC_ALL=en_US.UTF-8
@@ -104,3 +105,4 @@ function mail_enable {
 }
 
 . ~/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

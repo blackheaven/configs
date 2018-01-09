@@ -61,6 +61,9 @@ nmap <F12> ~
 cmap <F12> ~
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <Leader>e :vsplit %%<CR>
+" diff
+nmap >C [c
+nmap <c ]c
 
 set laststatus=2 " Always display the statusline in all windows
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -262,6 +265,9 @@ nnoremap <silent> <F8> :call <SID>StripTrailingWhitespaces()<CR>
 " Vundle
 filetype off
 
+" fzf
+set rtp+=~/.fzf
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -276,7 +282,6 @@ Plugin 'kana/vim-smartinput'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-scripts/gcov.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-endwise'
 Plugin 'AndrewRadev/sideways.vim'
@@ -308,24 +313,22 @@ Plugin 'mbbill/undotree'
 " Plugin 'haya14busa/incsearch-fuzzy.vim'
 " Plugin 'junegunn/vim-easy-align'
 " Plugin 'Valloric/YouCompleteMe'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'junegunn/fzf', {'rtp':  '~/.fzf' }
+Plugin 'junegunn/fzf.vim'
+Plugin 'romainl/vim-qf'
 
 call vundle#end()
 filetype plugin indent on
 
-" CtrlP (FuzzyFinder-like)
-let g:ctrlp_map = '<c-o>'
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_switch_buffer = 'v'
-let g:ctrlp_open_new_file = 'v'
-let g:ctrlp_open_multiple_files = 'h'
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<C-CR>'],
-    \ 'AcceptSelection("h")': ['<S-CR>'],
-    \ 'AcceptSelection("v")': ['<CR>'],
-    \ }
-
-let g:ctrlp_custom_ignore = 'vendor'
-let ctrlp_working_path_mode = '0'
+" fzf
+nnoremap <C-o> :Files<cr>
+nnoremap <C-t> :Tags<cr>
+nnoremap <C-b> :pop<cr>
+let g:fzf_action = {
+  \ 'CTRL-E':       'edit',
+  \ 'ENTER':        'split',
+  \ 'ALT-ENTER':    'vsplit' }
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -378,6 +381,15 @@ set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim
 
 " Undotree
 nnoremap <C-u> :UndotreeToggle<CR>
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" vim-qf
+let g:qf_mapping_ack_style = 1
+nmap <n :cnext<CR>
+nmap >N :cprevious<CR>
+nmap <l <Plug>qf_qf_stay_toggle
+nmap >L <Plug>qf_qf_toggle
 
 autocmd FileType haskell nnoremap <Leader>h :Unite -start-insert haskellimport <CR>
 autocmd FileType haskell nnoremap <Leader>d :UniteWithCursorWord haskellimport <CR>
