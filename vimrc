@@ -163,13 +163,6 @@ set smartcase
 set smarttab
 set wrap                      " Wrap long lines
 
-" StormShield
-" set noexpandtab                 " Do not expand tabs into spaces
-" set shiftwidth=2
-" set softtabstop=2
-" set tabstop=2
-
-
 " folding (masquage automatique)
 set foldenable
 set foldmethod=syntax
