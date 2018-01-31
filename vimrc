@@ -41,6 +41,7 @@ set completeopt=menu,preview
 set keymodel=startsel
 set list
 set ruler
+set scrolloff=5
 
 " Clavier
 set backspace=start,indent,eol
@@ -249,7 +250,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'neilhwatson/vim_cf3'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'
@@ -257,7 +257,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'kana/vim-smartinput'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Yggdroot/indentLine'
-Plugin 'vim-scripts/gcov.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-endwise'
 Plugin 'AndrewRadev/sideways.vim'
@@ -267,8 +266,6 @@ Plugin 'AndrewRadev/switch.vim'
 Plugin 'drmikehenry/vim-fixkey'
 Plugin 'hspec/hspec.vim'
 Plugin 'dag/vim2hs'
-Plugin 'ujihisa/neco-ghc'
-Plugin 'Twinside/vim-hoogle'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'elzr/vim-json'
 Plugin 'wellle/targets.vim'
@@ -277,7 +274,6 @@ Plugin 'ujihisa/unite-haskellimport'
 Plugin 'bogado/file-line'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kongo2002/fsharp-vim'
-Plugin 'lambdatoast/elm.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'w0rp/ale'
 Plugin 'haya14busa/incsearch.vim'
@@ -376,6 +372,10 @@ autocmd FileType haskell nnoremap <Leader>d :UniteWithCursorWord haskellimport <
 
 " Convert expressions to pointfree on pressing gq
 autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
+
+" netrw (disable)
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 autocmd BufRead,BufNewFile *.zsh*   set filetype=zsh
 autocmd BufRead,BufNewFile *.ru     set filetype=ruby
