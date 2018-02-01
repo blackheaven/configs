@@ -304,10 +304,10 @@ let g:fzf_action = {
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
-nmap f <Leader>f
-nmap F <Leader>F
-nmap t <Leader>t
-nmap T <Leader>T
+nmap f <Plug>(easymotion-f)
+nmap F <Plug>(easymotion-F)
+nmap t <Plug>(easymotion-t)
+nmap T <Plug>(easymotion-T)
 
 " Sideways
 nnoremap <C-Left> :SidewaysLeft<CR>
@@ -372,10 +372,6 @@ autocmd FileType haskell nnoremap <Leader>d :UniteWithCursorWord haskellimport <
 
 " Convert expressions to pointfree on pressing gq
 autocmd BufEnter *.hs set formatprg=xargs\ -0\ pointfree
-
-" netrw (disable)
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
 
 autocmd BufRead,BufNewFile *.zsh*   set filetype=zsh
 autocmd BufRead,BufNewFile *.ru     set filetype=ruby
