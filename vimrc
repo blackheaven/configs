@@ -60,7 +60,6 @@ imap <F12> ~
 nmap <F12> ~
 cmap <F12> ~
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
-map <Leader>e :vsplit %%<CR>
 " diff
 nmap >C [c
 nmap <c ]c
@@ -179,26 +178,17 @@ set nopaste
 
 " Search
 "" Visual '*' search
-let g:VeryLiteral = 0
 function! s:VSetSearch(cmd)
-  let old_reg = getreg('"')
-  let old_regtype = getregtype('"')
-  normal! gvy
-  if @@ =~? '^[0-9a-z,_]*$' || @@ =~? '^[0-9a-z ,_]*$' && g:VeryLiteral
-    let @/ = @@
-  else
+    let old_reg = getreg('"')
+    let old_regtype = getregtype('"')
+    normal! gvy
     let pat = escape(@@, a:cmd.'\')
-    if g:VeryLiteral
-      let pat = substitute(pat, '\n', '\\n', 'g')
-    else
-      let pat = substitute(pat, '^\_s\+', '\\s\\+', '')
-      let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
-      let pat = substitute(pat, '\_s\+', '\\_s\\+', 'g')
-    endif
+    let pat = substitute(pat, '^\_s\+', '\\s\\+', '')
+    let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
+    let pat = substitute(pat, '\_s\+', '\\_s\\+', 'g')
     let @/ = '\V'.pat
-  endif
-  normal! gV
-  call setreg('"', old_reg, old_regtype)
+    normal! gV
+    call setreg('"', old_reg, old_regtype)
 endfunction
 
 vnoremap <silent> * :<C-U>call <SID>VSetSearch('/')<CR>/<C-R>/<CR>v//e<CR>
@@ -226,16 +216,9 @@ function! HLNext (blinktime)
     redraw
 endfunction
 
-
 nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
 
-
-nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral
-  \\| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")<CR>
-if !hasmapto("<Plug>VLToggle")
-  nmap <unique> <Leader>vl <Plug>VLToggle
-endif
 " Sélection des dernières lignes modifiées
 nmap gV `[v`]
 
