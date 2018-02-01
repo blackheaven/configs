@@ -308,6 +308,8 @@ let g:fzf_action = {
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
+nmap f <Leader>f
+nmap t <Leader>t
 
 " Sideways
 nnoremap <C-Left> :SidewaysLeft<CR>
