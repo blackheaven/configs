@@ -1,4 +1,4 @@
-"Copyright (c) 2014, Gautier DI FOLCO <gautier.difolco@gmail.com>
+"Copyright (c) 2014-2018, Gautier DI FOLCO <gautier.difolco@gmail.com>
 "All rights reserved.
 "
 "Redistribution and use in source and binary forms, with or without
@@ -62,8 +62,8 @@ nmap <F12> ~
 cmap <F12> ~
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 " diff
-nmap >C [c
-nmap <c ]c
+nmap >C [n
+nmap <c ]n
 
 set laststatus=2 " Always display the statusline in all windows
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -196,30 +196,6 @@ vnoremap <silent> * :<C-U>call <SID>VSetSearch('/')<CR>/<C-R>/<CR>v//e<CR>
 vnoremap <silent> # :<C-U>call <SID>VSetSearch('?')<CR>?<C-R>/<CR>v??e<CR>
 vmap <kMultiply> *
 
-function! HLNext (blinktime)
-    highlight RedOnRed ctermfg=red guibg=red ctermfg=red guibg=red
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    echo matchlen
-    let ring_pat = (lnum > 1 ? '\%'.(lnum-1).'l\%>'
-                \ . max([col-4,1]) .'v\%<'.(col+matchlen+3).'v.\|' : '')
-                \ . '\%'.lnum.'l\%>'.max([col-4,1]) .'v\%<'.col.'v.'
-                \ . '\|'
-                \ . '\%'.lnum.'l\%>'.max([col+matchlen-1,1])
-                \ . 'v\%<'.(col+matchlen+3).'v.'
-                \ . '\|'
-                \ . '\%'.(lnum+1).'l\%>'.max([col-4,1])
-                \ . 'v\%<'.(col+matchlen+3).'v.'
-    let ring = matchadd('RedOnRed', ring_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 500) . 'm'
-    call matchdelete(ring)
-    redraw
-endfunction
-
-nnoremap <silent> n n:call HLNext(0.4)<cr>
-nnoremap <silent> N N:call HLNext(0.4)<cr>
-
 " Sélection des dernières lignes modifiées
 nmap gV `[v`]
 
@@ -271,10 +247,10 @@ Plugin 'elzr/vim-json'
 Plugin 'wellle/targets.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'ujihisa/unite-haskellimport'
-Plugin 'bogado/file-line'
+Plugin 'kopischke/vim-fetch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kongo2002/fsharp-vim'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 Plugin 'w0rp/ale'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -283,12 +259,13 @@ Plugin 'honza/vim-snippets'
 Plugin 'octref/RootIgnore'
 Plugin 'mbbill/undotree'
 " Plugin 'haya14busa/incsearch-fuzzy.vim'
-" Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/vim-easy-align'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'junegunn/fzf', {'rtp':  '~/.fzf' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'romainl/vim-qf'
+Plugin 'ivyl/vim-bling'
 
 call vundle#end()
 filetype plugin indent on
@@ -366,6 +343,10 @@ nmap <n :cnext<CR>
 nmap >N :cprevious<CR>
 nmap <l <Plug>qf_qf_stay_toggle
 nmap >L <Plug>qf_qf_toggle
+
+" bling
+let g:bling_time = 2
+let g:bling_count = 2
 
 autocmd FileType haskell nnoremap <Leader>h :Unite -start-insert haskellimport <CR>
 autocmd FileType haskell nnoremap <Leader>d :UniteWithCursorWord haskellimport <CR>

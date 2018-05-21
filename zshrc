@@ -96,7 +96,7 @@ bindkey "\e[3~" delete-char
 bindkey "^R" history-incremental-search-backward # Rechercher"]]]"
 bindkey "4~" "~"
 
-alias irssi='export TERM=tmux; irssi'
+alias irssi='TERM=tmux irssi'
 alias tmux='tmux -u'
 alias zip='zip -r'
 alias du='du -hs'
