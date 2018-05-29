@@ -21,7 +21,7 @@ p=$(pwd)                                                                     # i
 ln -sfn $p/vimrc                   ~/.vimrc                                  # install-link
 ln -sfn $p/tmux.conf               ~/.tmux.conf                              # install-link
 ln -sfn $p/zshrc                   ~/.zshrc                                  # install-link
-ln -sfn $p/powerline               ~/.config/powerline                       # install-link
+ln -sf  $p/powerline               ~/.config/powerline                       # install-link
 ln -sfn $p/gitconfig               ~/.gitconfig                              # install-link
 ln -sfn $p/githelpers              ~/.githelpers                             # install-link
 ln -sfn $p/blackheaven.zsh-theme   ~/.oh-my-zsh/themes/blackheaven.zsh-theme # install-link
