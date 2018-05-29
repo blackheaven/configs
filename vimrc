@@ -348,6 +348,10 @@ nmap >L <Plug>qf_qf_toggle
 let g:bling_time = 2
 let g:bling_count = 2
 
+" vim-easy-align
+vmap A <Plug>(EasyAlign)
+nmap gA <Plug>(EasyAlign)
+
 autocmd FileType haskell nnoremap <Leader>h :Unite -start-insert haskellimport <CR>
 autocmd FileType haskell nnoremap <Leader>d :UniteWithCursorWord haskellimport <CR>
 
