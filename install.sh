@@ -8,6 +8,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 wget -qO- https://get.haskellstack.org/ | sh
+mkdir -p .vim_runtime/undodir
 
 rm -Rf   ~/.vimrc                                                            # delete-link
 rm -Rf   ~/.tmux.conf                                                        # delete-link
