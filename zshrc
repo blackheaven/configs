@@ -104,6 +104,9 @@ alias mail_disable="sudo iptables -A OUTPUT -p tcp --dport 465 -j REJECT"
 function mail_enable {
     sudo iptables -D OUTPUT $(sudo iptables -nvL OUTPUT --line-numbers | grep dpt:465 | grep  REJECT | cut -f1 -d' ')
 }
+function mkcd {
+    mkdir "$1" && cd "$1"
+}
 
 . ~/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
