@@ -322,8 +322,10 @@ xmap <Leader>: gcc
 nmap <Leader>: gcc
 vmap <Leader>: gc
 
+" vim-abolish
 map crl guaW
 
+" vim utlisnips
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
