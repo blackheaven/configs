@@ -243,6 +243,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'vimtaku/vim-textobj-keyvalue'
 Plugin 'sgur/vim-textobj-parameter'
+Plugin 'machakann/vim-textobj-functioncall'
+Plugin 'thalesmello/vim-textobj-methodcall'
 " visual
 Plugin 'Yggdroot/indentLine'
 Plugin 'ivyl/vim-bling'
