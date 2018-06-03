@@ -260,7 +260,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-endwise'
-Plugin 'AndrewRadev/sideways.vim'
+Plugin 'machakann/vim-swap'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'junegunn/vim-easy-align'
@@ -297,9 +297,10 @@ nmap F <Plug>(easymotion-F)
 nmap t <Plug>(easymotion-t)
 nmap T <Plug>(easymotion-T)
 
-" Sideways
-nnoremap <C-Left> :SidewaysLeft<CR>
-nnoremap <C-Right> :SidewaysRight<CR>
+" vim-swap
+let g:swap_no_default_key_mappings = 1
+nmap <C-Left> <Plug>(swap-prev)
+nmap <C-Right> <Plug>(swap-next)
 
 " SplitJoin
 let g:splitjoin_split_mapping = 'ss'
