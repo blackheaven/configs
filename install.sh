@@ -24,4 +24,5 @@ ln -sfn $p/zshrc                   ~/.zshrc                                  # i
 ln -sf  $p/powerline               ~/.config/powerline                       # install-link
 ln -sfn $p/gitconfig               ~/.gitconfig                              # install-link
 ln -sfn $p/githelpers              ~/.githelpers                             # install-link
+ln -sfn $p/gitignore               ~/.gitignore                              # install-link
 ln -sfn $p/blackheaven.zsh-theme   ~/.oh-my-zsh/themes/blackheaven.zsh-theme # install-link

@@ -14,6 +14,7 @@
     editor = vim
     autocrlf = input
     safecrlf = warn
+    excludesfile = ~/.gitignore
 [push]
     default = upstream
 [merge]
