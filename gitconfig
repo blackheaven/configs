@@ -22,6 +22,7 @@
 [alias]
     st = status
     ci = commit
+    cif = "!git commit --fixup=$(git log --oneline | grep -v 'fixup!' | head -n 1 | cut -d' ' -f1)"
     co = checkout
     head = !git l -1
     h = !git head
