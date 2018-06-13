@@ -95,6 +95,7 @@ bindkey '\e[4~' end-of-line
 bindkey "\e[3~" delete-char
 bindkey "^R" history-incremental-search-backward # Rechercher"]]]"
 bindkey "4~" "~"
+bindkey "^v" edit-command-line
 
 alias irssi='TERM=tmux irssi'
 alias tmux='tmux -u'
