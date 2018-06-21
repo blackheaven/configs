@@ -15,6 +15,7 @@
     autocrlf = input
     safecrlf = warn
     excludesfile = ~/.gitignore
+    whitespace = cr-at-eol
 [push]
     default = upstream
 [merge]
