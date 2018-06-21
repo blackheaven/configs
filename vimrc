@@ -256,6 +256,7 @@ Plugin 'tpope/vim-abolish'
 " vcs
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
+Plugin 'christoomey/vim-conflicted'
 " commands/codegen
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
