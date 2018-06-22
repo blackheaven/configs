@@ -58,3 +58,14 @@ pretty_git_log() {
     # Page only if we need to
     less -FXRS
 }
+
+fixup() {
+    LINE=$(git log --oneline | head -n 1)
+    if [ -z "${LINE##* fixup! *}" ]; then
+        HASH=$(git log --oneline --grep="^$(echo $LINE | sed -e 's/^.*fixup! \(.*\)$/\1/')$" | cut -d' ' -f1 | head -n 1)
+    else
+        HASH=$(echo $LINE | cut -d' ' -f1)
+    fi
+
+    git commit --fixup=$HASH
+}
