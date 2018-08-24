@@ -327,8 +327,8 @@ vmap <Leader>: gc
 map crl guaW
 
 " vim utlisnips
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsExpandTrigger="<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger="<S-Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsEditSplit="vertical"
 
