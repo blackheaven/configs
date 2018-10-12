@@ -251,6 +251,7 @@ Plugin 'thalesmello/vim-textobj-methodcall'
 " visual
 Plugin 'Yggdroot/indentLine'
 Plugin 'ivyl/vim-bling'
+Plugin 'RRethy/vim-illuminate'
 " search
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'junegunn/fzf', {'rtp':  '~/.fzf' }
