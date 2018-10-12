@@ -64,6 +64,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<CR>
 " diff
 nmap >C [n
 nmap <c ]n
+nmap dgu :diffg RE
+nmap dgb :diffg BA
+nmap dgl :diffg LO
 
 set laststatus=2 " Always display the statusline in all windows
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -256,7 +259,6 @@ Plugin 'tpope/vim-abolish'
 " vcs
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
-Plugin 'christoomey/vim-conflicted'
 " commands/codegen
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
