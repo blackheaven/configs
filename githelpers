@@ -69,3 +69,11 @@ fixup() {
 
     git commit --fixup=$HASH
 }
+
+checkout_history() {
+    LIMIT=${1:-5}
+    for i in `seq 1 $LIMIT`
+    do
+        echo "@{-$i} " $(git rev-parse --symbolic-full-name @{-$i} | sed -e 's/refs\/heads\///')
+    done
+}
