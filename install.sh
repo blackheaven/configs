@@ -7,6 +7,7 @@ cd ~/.rbenv && src/configure && make -C src
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+yaourt git-fixup || (git clone https://github.com/keis/git-fixup.git /tmp/git-fixup && cd /tmp/git-fixup && make install INSTALLDIR=~/.local && make install-zsh INSTALLDIR=~/.zsh && mv ~./zshrc/share/zsh/site-functions/_git-fixup ~/.zshrc && rm ~/.zshrc/share && cd -)
 wget -qO- https://get.haskellstack.org/ | sh
 mkdir -p .vim_runtime/undodir
 

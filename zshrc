@@ -62,6 +62,10 @@ npm_chpwd_hook() {
 
 add-zsh-hook preexec npm_chpwd_hook
 
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' user-commands fixup:'Create a fixup commit'
+autoload +X _git-fixup
+
 # The following lines were added by compinstall
 
 #zstyle ':completion:*' completer _list _oldlist _expand _complete _ignored _match _correct _approximate _prefix
