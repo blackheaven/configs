@@ -17,6 +17,7 @@ rm -Rf   ~/.zshrc                                                            # d
 rm -Rf   ~/.config/powerline                                                 # delete-link
 rm -Rf   ~/.gitconfig                                                        # delete-link
 rm -Rf   ~/.githelpers                                                       # delete-link
+rm -Rf   ~/.gitignore                                                        # delete-link
 rm -Rf   ~/.oh-my-zsh/themes/blackheaven.zsh-theme                           # delete-link
 p=$(pwd)                                                                     # install-link
 ln -sfn $p/vimrc                   ~/.vimrc                                  # install-link
