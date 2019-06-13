@@ -34,5 +34,7 @@
     ra = !git r --all
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
+    diverge = !git merge-base ${1:-upstream/master} $(git rev-parse --abbrev-ref HEAD)
+    diffdiv = !git diff $(git diverge $1)
 [grep]
     lineNumber = true
