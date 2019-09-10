@@ -1,5 +1,5 @@
 sudo apt install -y python3-pip python3-libgit2
-pip3 install --user pyuv powerline-status psutil pygit
+pip3 install --user pyuv powerline-status psutil pygit powerline-mem-segment
 sudo apt install -y tmux zsh vim-nox libssl-dev libreadline-dev zlib1g-dev curl
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
